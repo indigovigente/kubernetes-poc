@@ -42,11 +42,12 @@ spec:
       labels:
         app: pagamentos
     spec:
+      hostname: pagamentos-ms
       containers:
       - name: pagamentos
         image: arcaico25/java-pagamentos-k8s:v3
         ports:
-        - containerPort: 80
+        - containerPort: 40000
         env:
         - name: SERVER_HOST
           valueFrom:
@@ -86,11 +87,12 @@ spec:
       labels:
         app: pedidos
     spec:
+      hostname: pedidos-ms
       containers:
       - name: pedidos
         image: arcaico25/java-pedidos-k8s:v3
         ports:
-        - containerPort: 80
+        - containerPort: 40001
         env:
         - name: SERVER_HOST
           valueFrom:
